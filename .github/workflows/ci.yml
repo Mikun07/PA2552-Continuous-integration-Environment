@@ -20,6 +20,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+
+      - name: Move to project directory
+         run: cd TicTacToe 
       
       - name: build project
         run: mvn -B package --file TicTacToe/pom.xml
