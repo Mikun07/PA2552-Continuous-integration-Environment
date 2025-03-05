@@ -26,8 +26,8 @@ jobs:
       - name: Move to project directory
         run: cd TicTacToe
 
-      - name: Build with Maven
-        run: mvn clean package
-
-      - name: Run Tests
-        run: mvn test
+      - name: Build project
+        run: mvn -B package --file TicTacToe/pom.xml
+      
+      - name: Run tests
+        run: mvn test --file TicTacToe/pom.xml
