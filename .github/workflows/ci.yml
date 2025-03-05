@@ -22,7 +22,7 @@ jobs:
           java-version: '21'
       
       - name: build project
-        run: mvn -B package --file pom.xml
+        run: mvn -B package --file TicTacToe/pom.xml
       
       - name: run test
         run: mvn test
