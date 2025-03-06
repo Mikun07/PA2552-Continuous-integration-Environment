@@ -10,7 +10,7 @@ public class TicTacToeTest {
         game = new TicTacToe('X'); // Start game with player 'X'
     }
 
-    @Test
+    @Test 
     void testResetBoard() {
         // Simulate some moves
         game.buttons[0][0].setText("X");
