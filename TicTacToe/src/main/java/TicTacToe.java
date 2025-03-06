@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener; 
+import java.awt.event.ActionListener;
 
 public class TicTacToe extends JFrame implements ActionListener {
     JButton[][] buttons = new JButton[3][3];
