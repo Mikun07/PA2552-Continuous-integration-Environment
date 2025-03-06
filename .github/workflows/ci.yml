@@ -3,12 +3,12 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - main
+      - st3nhars
       - TicTacToe.java
       - TicTacToeTest.java
   pull_request:
     branches:
-      - main
+      - st3nhars
       - TicTacToe.java
       - TicTacToeTest.java
 
