@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TicTacToe extends JFrame implements ActionListener {
-    private JButton[][] buttons = new JButton[3][3];
+    JButton[][] buttons = new JButton[3][3];
     private char currentPlayer;
     
     public TicTacToe(char chosenPlayer) {
@@ -83,7 +83,7 @@ public class TicTacToe extends JFrame implements ActionListener {
         return true;
     }
     
-    private void resetBoard() {
+    void resetBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText(" ");

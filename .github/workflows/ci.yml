@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+      - TicTacToe.java
+      - TicTacToeTest.java
   pull_request:
     branches:
       - main
+      - TicTacToe.java
+      - TicTacToeTest.java
 
 jobs:
   build:
