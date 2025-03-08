@@ -22,8 +22,7 @@ public class TC01Test {
     
     @AfterEach
     public void cleanup() {
-        if (game != null) {
-            game.dispose(); // Properly dispose of the JFrame
-        }
+        // No need to call dispose() because TicTacToe is not a JFrame anymore
+        game = null; // Allow garbage collection to clean up
     }
 }

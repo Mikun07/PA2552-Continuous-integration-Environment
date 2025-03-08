@@ -5,7 +5,7 @@ public class TC02Test {
 
     @Test
     void testHorizontalWin() {
-        TicTacToe.headlessMode = true;  // Ensure headless mode is enabled
+        TicTacToe.headlessMode = true; // Ensure headless mode is enabled
         TicTacToe game = new TicTacToe('X');
         game.testMode = true;
 

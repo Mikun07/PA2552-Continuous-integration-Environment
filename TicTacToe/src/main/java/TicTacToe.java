@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TicTacToe extends JFrame implements ActionListener {
+public class TicTacToe {
     JButton[][] buttons = new JButton[3][3]; // 3x3 board
     char currentPlayer; // Current player's symbol ('X' or 'O')
     boolean testMode = false; // Enables test mode (disables player switching)
-    static boolean headlessMode = GraphicsEnvironment.isHeadless(); // Detect if running in headless mode
+    static boolean headlessMode = GraphicsEnvironment.isHeadless(); // Detect if running in CI/CD (headless mode)
 
     // Constructor: Initializes the game
     public TicTacToe(char chosenPlayer) {
@@ -19,68 +19,70 @@ public class TicTacToe extends JFrame implements ActionListener {
                 buttons[i][j] = new JButton(" ");
                 buttons[i][j].setFont(new Font("Arial", Font.PLAIN, 60));
                 buttons[i][j].setFocusPainted(false);
-                buttons[i][j].addActionListener(this);
             }
         }
 
-        // Skip JFrame setup in headless mode
+        // If running in headless mode, do not create JFrame
         if (!headlessMode) {
-            setTitle("Tic-Tac-Toe");
-            setSize(300, 300);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLayout(new GridLayout(3, 3));
+            JFrame frame = new JFrame("Tic-Tac-Toe");
+            frame.setSize(300, 300);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setLayout(new GridLayout(3, 3));
 
             // Add buttons to the UI
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    add(buttons[i][j]);
+                    buttons[i][j].addActionListener(new ButtonClickListener(i, j));
+                    frame.add(buttons[i][j]);
                 }
             }
 
-            setVisible(true);
+            frame.setVisible(true);
         } else {
             System.out.println("Running in headless mode (CI/CD). UI will not be created.");
         }
     }
 
     // Handles button clicks
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        JButton clickedButton = (JButton) e.getSource();
+    private class ButtonClickListener implements ActionListener {
+        int row, col;
 
-        // Ignore already filled buttons
-        if (!clickedButton.getText().equals(" ")) {
-            return;
+        ButtonClickListener(int row, int col) {
+            this.row = row;
+            this.col = col;
         }
 
-        // Set button text to current player's symbol
-        clickedButton.setText(String.valueOf(currentPlayer));
-
-        // Check for winner
-        if (checkWinner()) {
-            if (!headlessMode) {
-                JOptionPane.showMessageDialog(this, "Player " + currentPlayer + " wins!");
-            } else {
-                System.out.println("Player " + currentPlayer + " wins!");
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!buttons[row][col].getText().equals(" ")) {
+                return; // Ignore already filled buttons
             }
-            resetBoard();
-            return;
-        }
 
-        // Check if the board is full (draw condition)
-        if (isBoardFull()) {
-            if (!headlessMode) {
-                JOptionPane.showMessageDialog(this, "It's a draw!");
-            } else {
-                System.out.println("It's a draw!");
+            buttons[row][col].setText(String.valueOf(currentPlayer));
+
+            if (checkWinner()) {
+                if (!headlessMode) {
+                    JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " wins!");
+                } else {
+                    System.out.println("Player " + currentPlayer + " wins!");
+                }
+                resetBoard();
+                return;
             }
-            resetBoard();
-            return;
-        }
 
-        // Prevent player switching in test mode
-        if (!testMode) {
-            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+            if (isBoardFull()) {
+                if (!headlessMode) {
+                    JOptionPane.showMessageDialog(null, "It's a draw!");
+                } else {
+                    System.out.println("It's a draw!");
+                }
+                resetBoard();
+                return;
+            }
+
+            if (!testMode) {
+                currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+            }
         }
     }
 
