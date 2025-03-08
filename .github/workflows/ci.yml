@@ -4,10 +4,11 @@ on:
   push:
     branches:
       # - '**'
-      AF/TC-02---Win-Condition
+      - AF/TC-02---Win-Condition
   pull_request:
     branches:
-      - main
+      # - main
+      - AF/TC-02---Win-Condition
 
 jobs:
   build:
