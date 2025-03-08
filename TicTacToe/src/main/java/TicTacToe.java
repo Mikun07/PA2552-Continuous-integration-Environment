@@ -7,13 +7,13 @@ public class TicTacToe extends JFrame implements ActionListener {
     JButton[][] buttons = new JButton[3][3]; // 3x3 board
     char currentPlayer; // Current player's symbol ('X' or 'O')
     boolean testMode = false; // Enables test mode (disables player switching)
-    static boolean headlessMode = Boolean.getBoolean("java.awt.headless"); // Detect if running in CI/CD
+    static boolean headlessMode = GraphicsEnvironment.isHeadless(); // Detect if running in headless mode
 
     // Constructor: Initializes the game
     public TicTacToe(char chosenPlayer) {
         this.currentPlayer = chosenPlayer;
 
-        // Always initialize the buttons array, even in headless mode
+        // Always initialize buttons array, even in headless mode
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j] = new JButton(" ");
@@ -23,7 +23,8 @@ public class TicTacToe extends JFrame implements ActionListener {
             }
         }
 
-        if (!headlessMode) { // Only create UI if not running in GitHub Actions
+        // Skip JFrame setup in headless mode
+        if (!headlessMode) {
             setTitle("Tic-Tac-Toe");
             setSize(300, 300);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +39,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 
             setVisible(true);
         } else {
-            System.out.println("Running in headless mode (GitHub Actions).");
+            System.out.println("Running in headless mode (CI/CD). UI will not be created.");
         }
     }
 
@@ -83,8 +84,8 @@ public class TicTacToe extends JFrame implements ActionListener {
         }
     }
 
-    // Helper method: Checks if a player has won
-    boolean checkWinner() {
+    // Checks if a player has won
+    public boolean checkWinner() {
         for (int i = 0; i < 3; i++) {
             if ((buttons[i][0].getText().equals(String.valueOf(currentPlayer)) &&
                  buttons[i][1].getText().equals(String.valueOf(currentPlayer)) &&
@@ -104,7 +105,7 @@ public class TicTacToe extends JFrame implements ActionListener {
                 buttons[2][0].getText().equals(String.valueOf(currentPlayer)));
     }
 
-    // Helper method: Checks if board is full
+    // Checks if board is full
     boolean isBoardFull() {
         for (JButton[] row : buttons) {
             for (JButton button : row) {
