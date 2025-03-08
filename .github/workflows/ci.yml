@@ -3,10 +3,14 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - '**'
+      # - '**'
+      - AF/TC-06---Turn_management
+
   pull_request:
     branches:
-      - main
+      # - main
+      - AF/TC-06---Turn_management
+
 
 jobs:
   build:

@@ -7,11 +7,13 @@ public class TicTacToe {
     JButton[][] buttons = new JButton[3][3]; // 3x3 board
     char currentPlayer; // Current player's symbol ('X' or 'O')
     boolean testMode = false; // Enables test mode (disables player switching)
+    boolean gameWon = false; // Track if the game is already won
     static boolean headlessMode = GraphicsEnvironment.isHeadless(); // Detect if running in CI/CD (headless mode)
 
     // Constructor: Initializes the game
     public TicTacToe(char chosenPlayer) {
         this.currentPlayer = chosenPlayer;
+        this.gameWon = false; // Reset game state at start
 
         // Always initialize buttons array, even in headless mode
         for (int i = 0; i < 3; i++) {
@@ -54,6 +56,8 @@ public class TicTacToe {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            if (gameWon) return; // Stop moves after a win
+
             if (!buttons[row][col].getText().equals(" ")) {
                 return; // Ignore already filled buttons
             }
@@ -61,12 +65,12 @@ public class TicTacToe {
             buttons[row][col].setText(String.valueOf(currentPlayer));
 
             if (checkWinner()) {
+                gameWon = true; // Mark game as won
                 if (!headlessMode) {
                     JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " wins!");
                 } else {
                     System.out.println("Player " + currentPlayer + " wins!");
                 }
-                resetBoard();
                 return;
             }
 
@@ -76,7 +80,6 @@ public class TicTacToe {
                 } else {
                     System.out.println("It's a draw!");
                 }
-                resetBoard();
                 return;
             }
 
@@ -88,23 +91,37 @@ public class TicTacToe {
 
     // Checks if a player has won
     public boolean checkWinner() {
-        for (int i = 0; i < 3; i++) {
-            if ((buttons[i][0].getText().equals(String.valueOf(currentPlayer)) &&
-                 buttons[i][1].getText().equals(String.valueOf(currentPlayer)) &&
-                 buttons[i][2].getText().equals(String.valueOf(currentPlayer))) ||
+        String playerSymbol = String.valueOf(currentPlayer);
 
-                (buttons[0][i].getText().equals(String.valueOf(currentPlayer)) &&
-                 buttons[1][i].getText().equals(String.valueOf(currentPlayer)) &&
-                 buttons[2][i].getText().equals(String.valueOf(currentPlayer)))) {
+        // Check rows
+        for (int i = 0; i < 3; i++) {
+            if (buttons[i][0].getText().equals(playerSymbol) &&
+                buttons[i][1].getText().equals(playerSymbol) &&
+                buttons[i][2].getText().equals(playerSymbol)) {
                 return true;
             }
         }
-        return (buttons[0][0].getText().equals(String.valueOf(currentPlayer)) &&
-                buttons[1][1].getText().equals(String.valueOf(currentPlayer)) &&
-                buttons[2][2].getText().equals(String.valueOf(currentPlayer))) ||
-               (buttons[0][2].getText().equals(String.valueOf(currentPlayer)) &&
-                buttons[1][1].getText().equals(String.valueOf(currentPlayer)) &&
-                buttons[2][0].getText().equals(String.valueOf(currentPlayer)));
+
+        // Check columns
+        for (int i = 0; i < 3; i++) {
+            if (buttons[0][i].getText().equals(playerSymbol) &&
+                buttons[1][i].getText().equals(playerSymbol) &&
+                buttons[2][i].getText().equals(playerSymbol)) {
+                return true;
+            }
+        }
+
+        // Check diagonals
+        if ((buttons[0][0].getText().equals(playerSymbol) &&
+             buttons[1][1].getText().equals(playerSymbol) &&
+             buttons[2][2].getText().equals(playerSymbol)) ||
+            (buttons[0][2].getText().equals(playerSymbol) &&
+             buttons[1][1].getText().equals(playerSymbol) &&
+             buttons[2][0].getText().equals(playerSymbol))) {
+            return true;
+        }
+
+        return false;
     }
 
     // Checks if board is full
@@ -119,6 +136,7 @@ public class TicTacToe {
 
     // Resets the board for a new game
     void resetBoard() {
+        gameWon = false; // Reset game state
         for (JButton[] row : buttons) {
             for (JButton button : row) {
                 button.setText(" ");
