@@ -7,7 +7,7 @@ public class TC06Test {
     private void simulateMove(TicTacToe game, int row, int col) {
         try {
             SwingUtilities.invokeAndWait(() -> game.simulateMove(row, col)); // Ensure move runs on EDT
-            Thread.sleep(100); // Small delay for UI to process
+            Thread.sleep(200); // Give time for event processing
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -26,6 +26,7 @@ public class TC06Test {
     @Test
     void testPlayerAlternatesAfterEachMove() {
         TicTacToe game = new TicTacToe('X');
+        System.out.println("Starting test: testPlayerAlternatesAfterEachMove");
 
         simulateMove(game, 0, 0); // X moves
         assertEquals('O', game.getCurrentPlayer(), "After X moves, it should be O's turn");
@@ -42,6 +43,7 @@ public class TC06Test {
     @Test
     void testTurnDoesNotChangeIfMoveIsInvalid() {
         TicTacToe game = new TicTacToe('X');
+        System.out.println("Starting test: testTurnDoesNotChangeIfMoveIsInvalid");
 
         simulateMove(game, 1, 1); // X moves
         assertEquals('O', game.getCurrentPlayer(), "After X moves, it should be O's turn");
@@ -58,12 +60,15 @@ public class TC06Test {
     @Test
     void testTurnDoesNotChangeAfterWin() {
         TicTacToe game = new TicTacToe('X');
+        System.out.println("Starting test: testTurnDoesNotChangeAfterWin");
 
         simulateMove(game, 0, 0); // X
         simulateMove(game, 1, 1); // O
         simulateMove(game, 0, 1); // X
         simulateMove(game, 2, 2); // O
         simulateMove(game, 0, 2); // X wins
+
+        printBoard(game); // Debug board state
 
         assertTrue(game.checkWinner(), "X should have won the game");
 
