@@ -24,6 +24,15 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           cache: maven
+
+          - name: Run tests in Headless Mode
+        working-directory: TicTacToe
+        run: mvn test -Djava.awt.headless=true
+
+      - name: Build project
+        if: github.ref == 'refs/heads/main'
+        working-directory: TicTacToe
+        run: mvn -B package
       
       - name: Install Xvfb for GUI testing
         run: sudo apt-get install -y xvfb

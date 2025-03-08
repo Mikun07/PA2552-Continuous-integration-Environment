@@ -1,57 +1,46 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import javax.swing.SwingUtilities;
 
 public class TC02Test {
 
-    private void clickButton(TicTacToe game, int row, int col) {
-        SwingUtilities.invokeLater(() -> game.buttons[row][col].doClick());
-        try {
-            Thread.sleep(100); // Wait for the UI to update
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
     @Test
     void testHorizontalWin() {
+        TicTacToe.headlessMode = true; // Set before initializing game
         TicTacToe game = new TicTacToe('X');
-        game.testMode = true; // Enable test mode (disables player switching)
+        game.testMode = true;
 
-        clickButton(game, 0, 0);
-        clickButton(game, 0, 1);
-        clickButton(game, 0, 2);
+        // Directly set button values in headless mode
+        game.buttons[0][0].setText("X");
+        game.buttons[0][1].setText("X");
+        game.buttons[0][2].setText("X");
 
-        assertEquals("X", game.buttons[0][0].getText());
-        assertEquals("X", game.buttons[0][1].getText());
-        assertEquals("X", game.buttons[0][2].getText());
+        // Ensure the game correctly detects a horizontal win
+        assertTrue(game.checkWinner(), "Horizontal win should be detected");
     }
 
     @Test
     void testVerticalWin() {
+        TicTacToe.headlessMode = true; 
         TicTacToe game = new TicTacToe('X');
         game.testMode = true;
 
-        clickButton(game, 0, 0);
-        clickButton(game, 1, 0);
-        clickButton(game, 2, 0);
+        game.buttons[0][0].setText("X");
+        game.buttons[1][0].setText("X");
+        game.buttons[2][0].setText("X");
 
-        assertEquals("X", game.buttons[0][0].getText());
-        assertEquals("X", game.buttons[1][0].getText());
-        assertEquals("X", game.buttons[2][0].getText());
+        assertTrue(game.checkWinner(), "Vertical win should be detected");
     }
 
     @Test
     void testDiagonalWin() {
+        TicTacToe.headlessMode = true; 
         TicTacToe game = new TicTacToe('X');
         game.testMode = true;
 
-        clickButton(game, 0, 0);
-        clickButton(game, 1, 1);
-        clickButton(game, 2, 2);
+        game.buttons[0][0].setText("X");
+        game.buttons[1][1].setText("X");
+        game.buttons[2][2].setText("X");
 
-        assertEquals("X", game.buttons[0][0].getText());
-        assertEquals("X", game.buttons[1][1].getText());
-        assertEquals("X", game.buttons[2][2].getText());
+        assertTrue(game.checkWinner(), "Diagonal win should be detected");
     }
 }
