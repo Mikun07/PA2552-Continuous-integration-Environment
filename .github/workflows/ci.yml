@@ -3,31 +3,43 @@ name: Java CI with Maven
 on:
   push:
     branches:
+      # Specify branches where this workflow should run when code is pushed
       - AF/TC-02---Win-Condition
   pull_request:
     branches:
+      # Specify branches where this workflow should run on pull requests
       - AF/TC-02---Win-Condition
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use the latest stable Ubuntu runner
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout codes
+        uses: actions/checkout@v3  # Fetch the repository code
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '21'
-          cache: maven
+          distribution: 'temurin'  # Use the Eclipse Temurin JDK distribution
+          java-version: '21'  # Set the Java version to 21
+          cache: maven  # Cache Maven dependencies to speed up builds
 
-      - name: Run tests in Headless Mode
-        working-directory: TicTacToe
-        run: mvn test -Djava.awt.headless=true
+      - name: Install Xvfb for GUI testing
+        run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
 
-      - name: Build project
-        if: github.ref == 'refs/heads/main'
-        working-directory: TicTacToe
-        run: mvn -B package
+      - name: Start Xvfb
+        run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
+
+      - name: Run tests with Xvfb
+        working-directory: TicTacToe  # Change directory to the TicTacToe project
+        env:
+          DISPLAY: :99  # Set the display to use the Xvfb virtual screen
+        run: mvn test -Djava.awt.headless=true  # Run Maven tests in headless mode
+
+      - name: Build project with Xvfb
+        if: github.ref == 'refs/heads/main'  # Only build if the branch is main
+        working-directory: TicTacToe  # Change directory to the TicTacToe project
+        env:
+          DISPLAY: :99  # Set the display to use the Xvfb virtual screen
+        run: mvn -B package  # Run Maven package build in batch mode
