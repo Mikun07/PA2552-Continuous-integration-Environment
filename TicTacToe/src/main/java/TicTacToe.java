@@ -143,4 +143,15 @@ public class TicTacToe {
             }
         }
     }
+
+    // Simulate a button click programmatically for testing
+    public void simulateMove(int row, int col) {
+        if (row < 0 || row >= 3 || col < 0 || col >= 3) return; // Ignore out-of-bounds moves
+        buttons[row][col].doClick(); // Simulate click event
+    }
+
+    // Get the current player (for testing purposes)
+    public char getCurrentPlayer() {
+        return currentPlayer;
+    }
 }
