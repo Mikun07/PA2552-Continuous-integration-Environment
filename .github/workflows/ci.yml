@@ -3,14 +3,11 @@ name: Java CI with Maven
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - AF/TC-02---Win-Condition
-=======
-      - '**'
->>>>>>> 17fde664e3631a9e7daf71db56ab47f50e499bdd
+      # - '**'
+      AF/TC-02---Win-Condition
   pull_request:
     branches:
-      - AF/TC-02---Win-Condition
+      - main
 
 jobs:
   build:

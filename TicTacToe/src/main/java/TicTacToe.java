@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class TicTacToe extends JFrame implements ActionListener {
     JButton[][] buttons = new JButton[3][3]; // 3x3 board
     char currentPlayer; // Current player's symbol ('X' or 'O')
+    boolean testMode = false; // Enables test mode (disables player switching)
 
     // Constructor: Initializes the game
     public TicTacToe(char chosenPlayer) {
@@ -91,8 +92,10 @@ public class TicTacToe extends JFrame implements ActionListener {
             return;
         }
 
-        // Switch player
-        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+        // Prevent player switching in test mode
+        if (!testMode) {
+            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+        }
     }
 
     // Resets the board for a new game

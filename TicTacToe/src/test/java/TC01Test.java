@@ -2,7 +2,7 @@ import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class tc1Test {
+public class TC01Test {
     
     private TicTacToe game;
 
