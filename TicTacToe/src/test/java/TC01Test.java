@@ -2,7 +2,7 @@ import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class tc1Test {
+public class TC01Test {
     
     private TicTacToe game;
 
@@ -22,8 +22,7 @@ public class tc1Test {
     
     @AfterEach
     public void cleanup() {
-        if (game != null) {
-            game.dispose(); // Properly dispose of the JFrame
-        }
+        // No need to call dispose() because TicTacToe is not a JFrame anymore
+        game = null; // Allow garbage collection to clean up
     }
 }
