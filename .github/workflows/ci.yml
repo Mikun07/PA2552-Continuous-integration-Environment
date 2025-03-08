@@ -37,6 +37,8 @@ jobs:
           DISPLAY: :99
         run: mvn test --file TicTacToe/pom.xml
 
-      - name: Build project
+      - name: Build project with Xvfb
         if: github.ref == 'refs/heads/main'
+        env:
+          DISPLAY: :99
         run: mvn -B package --file TicTacToe/pom.xml
