@@ -56,7 +56,8 @@ public class TicTacToe {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (gameWon) return; // Stop moves after a win
+            if (gameWon)
+                return; // Stop moves after a win
 
             if (!buttons[row][col].getText().equals(" ")) {
                 return; // Ignore already filled buttons
@@ -96,8 +97,9 @@ public class TicTacToe {
         // Check rows
         for (int i = 0; i < 3; i++) {
             if (buttons[i][0].getText().equals(playerSymbol) &&
-                buttons[i][1].getText().equals(playerSymbol) &&
-                buttons[i][2].getText().equals(playerSymbol)) {
+                    buttons[i][1].getText().equals(playerSymbol) &&
+                    buttons[i][2].getText().equals(playerSymbol)) {
+                System.out.println("Win detected in row " + i);
                 return true;
             }
         }
@@ -105,19 +107,21 @@ public class TicTacToe {
         // Check columns
         for (int i = 0; i < 3; i++) {
             if (buttons[0][i].getText().equals(playerSymbol) &&
-                buttons[1][i].getText().equals(playerSymbol) &&
-                buttons[2][i].getText().equals(playerSymbol)) {
+                    buttons[1][i].getText().equals(playerSymbol) &&
+                    buttons[2][i].getText().equals(playerSymbol)) {
+                System.out.println("Win detected in column " + i);
                 return true;
             }
         }
 
         // Check diagonals
         if ((buttons[0][0].getText().equals(playerSymbol) &&
-             buttons[1][1].getText().equals(playerSymbol) &&
-             buttons[2][2].getText().equals(playerSymbol)) ||
-            (buttons[0][2].getText().equals(playerSymbol) &&
-             buttons[1][1].getText().equals(playerSymbol) &&
-             buttons[2][0].getText().equals(playerSymbol))) {
+                buttons[1][1].getText().equals(playerSymbol) &&
+                buttons[2][2].getText().equals(playerSymbol)) ||
+                (buttons[0][2].getText().equals(playerSymbol) &&
+                        buttons[1][1].getText().equals(playerSymbol) &&
+                        buttons[2][0].getText().equals(playerSymbol))) {
+            System.out.println("Win detected in diagonal");
             return true;
         }
 
@@ -128,7 +132,8 @@ public class TicTacToe {
     boolean isBoardFull() {
         for (JButton[] row : buttons) {
             for (JButton button : row) {
-                if (button.getText().equals(" ")) return false;
+                if (button.getText().equals(" "))
+                    return false;
             }
         }
         return true;
@@ -144,10 +149,30 @@ public class TicTacToe {
         }
     }
 
-    // Simulate a button click programmatically for testing
+    // Simulate a button click programmatically for testing (headless mode fix)
     public void simulateMove(int row, int col) {
-        if (row < 0 || row >= 3 || col < 0 || col >= 3) return; // Ignore out-of-bounds moves
-        buttons[row][col].doClick(); // Simulate click event
+        if (row < 0 || row >= 3 || col < 0 || col >= 3)
+            return; // Ignore out-of-bounds moves
+        if (!buttons[row][col].getText().equals(" "))
+            return; // Ignore occupied cells
+
+        buttons[row][col].setText(String.valueOf(currentPlayer)); // Set move manually
+
+        if (checkWinner()) {
+            gameWon = true;
+            System.out.println("Player " + currentPlayer + " wins!");
+        } else if (isBoardFull()) {
+            System.out.println("It's a draw!");
+        } else {
+            togglePlayer(); // Manually switch turn
+        }
+    }
+
+    // Manually switch players (for testing in headless mode)
+    public void togglePlayer() {
+        if (!gameWon) {
+            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+        }
     }
 
     // Get the current player (for testing purposes)
