@@ -3,7 +3,7 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
     branches:
       - main
@@ -26,8 +26,9 @@ jobs:
       - name: Move to project directory
         run: cd TicTacToe
 
-      - name: Build project
-        run: mvn -B package --file TicTacToe/pom.xml
-      
       - name: Run tests
         run: mvn test --file TicTacToe/pom.xml
+
+      - name: Build project
+        if: github.ref == 'refs/heads/main'
+        run: mvn -B package --file TicTacToe/pom.xml
