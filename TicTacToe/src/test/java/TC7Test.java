@@ -9,7 +9,7 @@ public class TC7Test { // No package declarations
     @BeforeEach
     void setUp() {
         game = new TicTacToe('X'); // Initialize game with player 'X'
-        game.setVisible(true); // Ensure UI is loaded before interacting with buttons
+        // game.setVisible(true); // Ensure UI is loaded before interacting with buttons
     }
 
     @Test
@@ -19,10 +19,10 @@ public class TC7Test { // No package declarations
 
         button1.doClick(); // Player 'X' clicks
         assertEquals("X", button1.getText(), "Button should display 'X'");
-        assertEquals('O', game.getCurrentPlayer(), "Next turn should be 'O'");
+        assertEquals('O', game.getCurrentPlayer, "Next turn should be 'O'");
 
         button2.doClick(); // Player 'O' clicks
         assertEquals("O", button2.getText(), "Button should display 'O'");
-        assertEquals('X', game.getCurrentPlayer(), "Turn should switch back to 'X'");
+        assertEquals('X', game.getCurrentPlayer, "Turn should switch back to 'X'");
     }
 }
