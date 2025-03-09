@@ -24,7 +24,8 @@
         <scope>test</scope>
     </dependency>
 </dependencies>
-<plugins>
+<build>
+        <plugins>
             <!-- Maven Surefire Plugin for running JUnit tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
