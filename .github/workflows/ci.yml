@@ -10,34 +10,43 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest stable Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout codes
-        uses: actions/checkout@v3  # Fetch the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Use the Eclipse Temurin JDK distribution
-          java-version: '21'  # Set the Java version to 21
-          cache: maven  # Cache Maven dependencies to speed up builds
+          distribution: 'temurin'
+          java-version: '21'
+          cache: maven
 
-      - name: Install Xvfb for GUI testing
-        run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
+      # Install Xvfb for GUI-based tests
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
 
+      # Start Xvfb for GUI testing
       - name: Start Xvfb
-        run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
+        run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      
+      # Run HEADLESS TESTS (No UI needed)
+      - name: Run Headless Tests
+        # env:
+        #   DISPLAY: :99
+        run: mvn test -Djava.awt.headless=true -Dtest=TCO1Test
 
-      - name: Run tests with Xvfb
-        working-directory: TicTacToe  # Change directory to the TicTacToe project
+      # Run GUI TESTS (Require Virtual Display)
+      - name: Run GUI Tests with Xvfb
         env:
-          DISPLAY: :99  # Set the display to use the Xvfb virtual screen
-        run: mvn test -Djava.awt.headless=true  # Run Maven tests in headless mode
+          DISPLAY: :99
+        run: mvn test -Djava.awt.headless=false -Dtest=\*GUITest
 
-      - name: Build project with Xvfb
-        if: github.ref == 'refs/heads/main'  # Only build if the branch is main
-        working-directory: TicTacToe  # Change directory to the TicTacToe project
+      # Build project only if tests pass
+      - name: Build project
+        if: success()
+        working-directory: TicTacToe
         env:
-          DISPLAY: :99  # Set the display to use the Xvfb virtual screen
+          DISPLAY: :99
         run: mvn -B package
