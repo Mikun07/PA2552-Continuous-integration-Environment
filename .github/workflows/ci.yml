@@ -3,14 +3,10 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      # - '**'
-      - AF/TC-06---Turn_management
-
+      - '**'
   pull_request:
     branches:
-      # - main
-      - AF/TC-06---Turn_management
-
+      - main
 
 jobs:
   build:
@@ -27,21 +23,26 @@ jobs:
           java-version: '21'  # Set the Java version to 21
           cache: maven  # Cache Maven dependencies to speed up builds
 
+      # First run non-UI tests in headless mode (faster and more reliable)
+      - name: Run non-GUI tests in headless mode
+        working-directory: TicTacToe
+        run: mvn test -Djava.awt.headless=true -Dtest=TC01Test,TC02Test,TC06Test
+
+      # Then set up and run GUI tests with Xvfb
       - name: Install Xvfb for GUI testing
         run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
 
       - name: Start Xvfb
         run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
 
-      - name: Run tests with Xvfb
-        working-directory: TicTacToe  # Change directory to the TicTacToe project
+      - name: Run GUI tests with Xvfb
+        working-directory: TicTacToe
         env:
           DISPLAY: :99  # Set the display to use the Xvfb virtual screen
-        run: mvn test -Djava.awt.headless=true  # Run Maven tests in headless mode
+        run: mvn test -Dtest=TC08Test  # Run only GUI-related tests
 
-      - name: Build project with Xvfb
-        if: github.ref == 'refs/heads/main'  # Only build if the branch is main
-        working-directory: TicTacToe  # Change directory to the TicTacToe project
-        env:
-          DISPLAY: :99  # Set the display to use the Xvfb virtual screen
+      # Build the project if on main branch
+      - name: Build project
+        if: github.ref == 'refs/heads/main'
+        working-directory: TicTacToe
         run: mvn -B package
