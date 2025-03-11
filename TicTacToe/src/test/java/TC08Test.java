@@ -6,7 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,42 +18,34 @@ import org.junit.jupiter.api.Test;
  */
 public class TC08Test {
 
-    private JFrame frame;
     private TicTacToe game;
+    private JPanel panel;
 
     @BeforeEach
     public void setUp() {
-        // Create a frame to host the TicTacToe interface
-        frame = new JFrame("TicTacToe Test");
         
         // Create the TicTacToe game
         game = new TicTacToe('X');
         
-        // Create a JFrame to hold the game's buttons for testing
-        frame.setLayout(new GridLayout(3, 3));
-        
+        panel = new JPanel(new GridLayout(3, 3));
         // Add buttons to the frame
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 // Set button names for easier identification in testing
                 game.buttons[i][j].setName("button" + i + j);
-                frame.add(game.buttons[i][j]);
+                panel.add(game.buttons[i][j]);
             }
         }
-        
-        // Make the frame visible
-        frame.setSize(300, 300);
-        frame.setVisible(true);
     }
     
     @Test
     public void testJButtonsAreLoadedCorrectly() {
         // Verify the frame has the right layout
-        assertTrue(frame.getLayout() instanceof GridLayout);
+        assertTrue(panel.getLayout() instanceof GridLayout);
         
         // Verify the buttons exist and are placed in the UI
-        assertEquals(9, frame.getContentPane().getComponentCount(), 
-                "Frame should contain 9 buttons");
+        assertEquals(9, panel.getComponentCount(), 
+                "Panel should contain 9 buttons");
         
         // Verify each button's properties
         for (int row = 0; row < 3; row++) {
@@ -63,9 +55,9 @@ public class TC08Test {
                 // Verify button exists
                 assertNotNull(button, "Button at position [" + row + "][" + col + "] should exist");
                 
-                // Verify button is in the frame
-                assertTrue(frame.getContentPane().isAncestorOf(button),
-                        "Button should be added to the frame");
+                // Verify button is in the panel
+                assertTrue(panel.isAncestorOf(button),
+                        "Button should be added to the panel");
                 
                 // Verify button name
                 assertEquals("button" + row + col, button.getName(), 
@@ -93,8 +85,8 @@ public class TC08Test {
     @AfterEach
     public void tearDown() {
         // Clean up resources after test
-        if (frame != null) {
-            frame.dispose();
-        }
+       panel.removeAll();
+       panel = null;
+       game = null;    
     }
 }
