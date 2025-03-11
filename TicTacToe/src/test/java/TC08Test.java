@@ -28,7 +28,7 @@ public class TC08Test {
         game = new TicTacToe('X');
         
         panel = new JPanel(new GridLayout(3, 3));
-        // Add buttons to the frame
+        // Add buttons to the panel
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 // Set button names for easier identification in testing
@@ -40,7 +40,7 @@ public class TC08Test {
     
     @Test
     public void testJButtonsAreLoadedCorrectly() {
-        // Verify the frame has the right layout
+        // Verify the panel has the right layout
         assertTrue(panel.getLayout() instanceof GridLayout);
         
         // Verify the buttons exist and are placed in the UI
