@@ -26,7 +26,7 @@ jobs:
       # First run non-UI tests in headless mode (faster and more reliable)
       - name: Run non-GUI tests in headless mode
         working-directory: TicTacToe
-        run: mvn test -Djava.awt.headless=true -Dtest=TC01Test
+        run: mvn test -Djava.awt.headless=true -Dtest=TC01Test,TC02Test,TC06Test
 
       # Then set up and run GUI tests with Xvfb
       - name: Install Xvfb for GUI testing
