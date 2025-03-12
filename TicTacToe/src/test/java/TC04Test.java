@@ -17,7 +17,7 @@ public class TC04Test {
         assertEquals('O', game.getCurrentPlayer(), "Turn should switch to 'O' after valid move");
 
         game.simulateMove(1, 1); // Player 'O' tries to move to the same spot (invalid)
-        
+
         // Assert that the move was not overwritten
         assertEquals("X", game.buttons[1][1].getText(), "Button should not change after a second click");
         assertEquals('O', game.getCurrentPlayer(), "Turn should not switch after an invalid move");
