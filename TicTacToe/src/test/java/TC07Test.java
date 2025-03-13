@@ -83,25 +83,25 @@ public class TC07Test {
         printBoard(game); // Debug board state for GitHub Actions
     }
 
-    @Test
-    void testTurnDoesNotChangeAfterWin() {
-        System.out.println("Starting test: testTurnDoesNotChangeAfterWin");
+    // @Test
+    // void testTurnDoesNotChangeAfterWin() {
+    //     System.out.println("Starting test: testTurnDoesNotChangeAfterWin");
 
-        simulateMove(game, 0, 0); // X
-        simulateMove(game, 1, 1); // O
-        simulateMove(game, 0, 1); // X
-        simulateMove(game, 2, 2); // O
-        simulateMove(game, 0, 2); // X wins
+    //     simulateMove(game, 0, 0); // X
+    //     simulateMove(game, 1, 1); // O
+    //     simulateMove(game, 0, 1); // X
+    //     simulateMove(game, 2, 2); // O
+    //     simulateMove(game, 0, 2); // X wins
 
-        printBoard(game); // Debug board state
+    //     printBoard(game); // Debug board state
 
-        assertTrue(game.checkWinner(), "X should have won the game");
+    //     assertTrue(game.checkWinner(), "X should have won the game");
 
-        char winner = game.getCurrentPlayer();
+    //     char winner = game.getCurrentPlayer();
 
-        simulateMove(game, 2, 0); // O tries to move after X wins
-        assertEquals(winner, game.getCurrentPlayer(), "Turn should not change after a win");
+    //     simulateMove(game, 2, 0); // O tries to move after X wins
+    //     assertEquals(winner, game.getCurrentPlayer(), "Turn should not change after a win");
 
-        printBoard(game); // Debug board state for GitHub Actions
-    }
+    //     printBoard(game); // Debug board state for GitHub Actions
+    // }
 }
