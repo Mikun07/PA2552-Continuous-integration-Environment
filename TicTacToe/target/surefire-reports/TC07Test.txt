@@ -1,10 +1,4 @@
 -------------------------------------------------------------------------------
-<<<<<<<< HEAD:TicTacToe/target/surefire-reports/TC07Test.txt
 Test set: TC07Test
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.245 s - in TC07Test
-========
-Test set: TC04Test
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in TC04Test
->>>>>>>> 0822ec918d228dee3d2a55991c3c67c871b04ce6:TicTacToe/target/surefire-reports/TC04Test.txt
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.865 s -- in TC07Test

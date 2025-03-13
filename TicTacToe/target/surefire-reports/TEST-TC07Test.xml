@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC07Test" time="5.245" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TC07Test" time="4.865" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe\target\test-classes;C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe\target\classes;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MANDY\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\test-classes;C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\classes;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MANDY\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\MANDY\AppData\Local\Temp\surefire12184102563273246385\surefirebooter9597755799505199334.jar C:\Users\MANDY\AppData\Local\Temp\surefire12184102563273246385 2025-03-12T09-37-57_030-jvmRun1 surefire10258274750475350063tmp surefire_05608433968769538418tmp"/>
+    <property name="sun.java.command" value="C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195\surefirebooter-20250313193634327_3.jar C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195 2025-03-13T19-36-34_116-jvmRun1 surefire-20250313193634327_1tmp surefire_0-20250313193634327_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe\target\test-classes;C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe\target\classes;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MANDY\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\test-classes;C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\classes;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MANDY\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\MANDY"/>
     <property name="user.language" value="en"/>
@@ -25,12 +26,12 @@
     <property name="java.version.date" value="2025-01-21"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe"/>
+    <property name="basedir" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\MANDY\AppData\Local\Temp\surefire12184102563273246385\surefirebooter9597755799505199334.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195\surefirebooter-20250313193634327_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+8-LTS-188"/>
@@ -45,7 +46,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\MANDY\AppData\Local\Temp\"/>
     <property name="java.version" value="21.0.6"/>
-    <property name="user.dir" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\Continous integration\TicTacToe"/>
+    <property name="user.dir" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -58,8 +59,50 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC07Test" time="1.486"/>
-  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC07Test" time="1.037"/>
-  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC07Test" time="1.941"/>
-  <testcase name="testPlayerMoves" classname="TC07Test" time="0.764"/>
+  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC07Test" time="1.271">
+    <system-out><![CDATA[Starting test: testPlayerAlternatesAfterEachMove
+Board State:
+X O X 
+      
+      
+
+]]></system-out>
+  </testcase>
+  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC07Test" time="0.966">
+    <system-out><![CDATA[Starting test: testTurnDoesNotChangeIfMoveIsInvalid
+Board State:
+      
+  X   
+    O 
+
+]]></system-out>
+  </testcase>
+  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC07Test" time="1.917">
+    <system-out><![CDATA[Starting test: testTurnDoesNotChangeAfterWin
+Win detected in row 0
+Player X wins!
+Board State:
+X X X 
+  O   
+    O 
+
+Win detected in row 0
+Win detected in row 0
+Player X wins!
+Board State:
+X X X 
+  O   
+X   O 
+
+]]></system-out>
+  </testcase>
+  <testcase name="testPlayerMoves" classname="TC07Test" time="0.682">
+    <system-out><![CDATA[Starting test: testPlayerMoves
+Board State:
+X     
+  O   
+      
+
+]]></system-out>
+  </testcase>
 </testsuite>
