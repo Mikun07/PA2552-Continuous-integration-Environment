@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<<< HEAD:TicTacToe/target/surefire-reports/TEST-TC7Test.xml
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC7Test" time="4.963" tests="4" errors="0" skipped="0" failures="0">
-========
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC04Test" time="0" tests="1" errors="0" skipped="0" failures="0">
->>>>>>>> 0822ec918d228dee3d2a55991c3c67c871b04ce6:TicTacToe/target/surefire-reports/TEST-TC04Test.xml
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC06Test" time="0.008" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -19,11 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin"/>
-<<<<<<<< HEAD:TicTacToe/target/surefire-reports/TEST-TC7Test.xml
-    <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire10749177743999052166\surefirebooter4289741344283007606.jar C:\Users\ayomi\AppData\Local\Temp\surefire10749177743999052166 2025-03-10T17-30-34_103-jvmRun1 surefire1638648790181713903tmp surefire_09593142858050787284tmp"/>
-========
     <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire10964003985300701035\surefirebooter4891967092167640436.jar C:\Users\ayomi\AppData\Local\Temp\surefire10964003985300701035 2025-03-13T13-44-49_361-jvmRun1 surefire7854386899586842079tmp surefire_014053783778652647866tmp"/>
->>>>>>>> 0822ec918d228dee3d2a55991c3c67c871b04ce6:TicTacToe/target/surefire-reports/TEST-TC04Test.xml
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\test-classes;C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\classes;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\ayomi\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -38,11 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-<<<<<<<< HEAD:TicTacToe/target/surefire-reports/TEST-TC7Test.xml
-    <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire10749177743999052166\surefirebooter4289741344283007606.jar"/>
-========
     <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire10964003985300701035\surefirebooter4891967092167640436.jar"/>
->>>>>>>> 0822ec918d228dee3d2a55991c3c67c871b04ce6:TicTacToe/target/surefire-reports/TEST-TC04Test.xml
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -71,12 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-<<<<<<<< HEAD:TicTacToe/target/surefire-reports/TEST-TC7Test.xml
-  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC7Test" time="1.344"/>
-  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC7Test" time="1.017"/>
-  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC7Test" time="1.914"/>
-  <testcase name="testPlayerMoves" classname="TC7Test" time="0.664"/>
-========
-  <testcase name="testPreventRepeatedMove" classname="TC04Test" time="0"/>
->>>>>>>> 0822ec918d228dee3d2a55991c3c67c871b04ce6:TicTacToe/target/surefire-reports/TEST-TC04Test.xml
+  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC06Test" time="0.001"/>
+  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC06Test" time="0.002"/>
+  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC06Test" time="0.004"/>
 </testsuite>
