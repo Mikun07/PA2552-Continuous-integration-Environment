@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TC07Test" time="4.865" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TC07Test" time="5.157" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195\surefirebooter-20250313193634327_3.jar C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195 2025-03-13T19-36-34_116-jvmRun1 surefire-20250313193634327_1tmp surefire_0-20250313193634327_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\MANDY\AppData\Local\Temp\surefire3122670747874119217\surefirebooter-20250313194912217_3.jar C:\Users\MANDY\AppData\Local\Temp\surefire3122670747874119217 2025-03-13T19-49-11_984-jvmRun1 surefire-20250313194912217_1tmp surefire_0-20250313194912217_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\test-classes;C:\Users\MANDY\Documents\SCHOOL\MASTERS\PA2552 Software Testing\continous integration\TicTacToe\target\classes;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MANDY\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MANDY\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MANDY\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\MANDY\AppData\Local\Temp\surefire4480453492772909195\surefirebooter-20250313193634327_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\MANDY\AppData\Local\Temp\surefire3122670747874119217\surefirebooter-20250313194912217_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+8-LTS-188"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC07Test" time="1.271">
+  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC07Test" time="1.543">
     <system-out><![CDATA[Starting test: testPlayerAlternatesAfterEachMove
 Board State:
 X O X 
@@ -68,7 +68,7 @@ X O X
 
 ]]></system-out>
   </testcase>
-  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC07Test" time="0.966">
+  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC07Test" time="0.994">
     <system-out><![CDATA[Starting test: testTurnDoesNotChangeIfMoveIsInvalid
 Board State:
       
@@ -77,7 +77,7 @@ Board State:
 
 ]]></system-out>
   </testcase>
-  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC07Test" time="1.917">
+  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC07Test" time="1.883">
     <system-out><![CDATA[Starting test: testTurnDoesNotChangeAfterWin
 Win detected in row 0
 Player X wins!
@@ -96,7 +96,7 @@ X   O
 
 ]]></system-out>
   </testcase>
-  <testcase name="testPlayerMoves" classname="TC07Test" time="0.682">
+  <testcase name="testPlayerMoves" classname="TC07Test" time="0.683">
     <system-out><![CDATA[Starting test: testPlayerMoves
 Board State:
 X     
