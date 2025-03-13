@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC06Test" time="0.017" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC06Test" time="0.008" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire11558918874957615742\surefirebooter16027402303968875759.jar C:\Users\ayomi\AppData\Local\Temp\surefire11558918874957615742 2025-03-13T14-24-05_926-jvmRun1 surefire11113471419235605467tmp surefire_011907317357084998269tmp"/>
+    <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire16861398743784857138\surefirebooter5772962082993928207.jar C:\Users\ayomi\AppData\Local\Temp\surefire16861398743784857138 2025-03-13T14-30-12_308-jvmRun1 surefire3997564757280451593tmp surefire_0293628256485796027tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\test-classes;C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\classes;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\ayomi\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire11558918874957615742\surefirebooter16027402303968875759.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire16861398743784857138\surefirebooter5772962082993928207.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC06Test" time="0.004"/>
-  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC06Test" time="0.005"/>
-  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC06Test" time="0.005"/>
+  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC06Test" time="0.002"/>
+  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC06Test" time="0.001"/>
+  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC06Test" time="0.004"/>
 </testsuite>
