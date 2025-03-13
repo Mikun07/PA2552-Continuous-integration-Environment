@@ -26,7 +26,10 @@ public class TC03Test {
     public void testResetAfterWin() {
         // Create a winning scenario (X wins with first row)
         game.simulateMove(0, 0); // X in top-left
-        game.simulateMove(0, 1); // X in top-middle  
+        //Force player to be X since simulateMove() toggles player
+        game.currentPlayer = 'X';
+        game.simulateMove(0, 1); // X in top-middle
+        game.currentPlayer = 'X';  
         game.simulateMove(0, 2); // X in top-right
         
         // Verify game is marked as won before reset
@@ -51,10 +54,10 @@ public class TC03Test {
     @DisplayName("TC03.2 - Verify board resets after partial game")
     public void testResetAfterPartialGame() {
         // Make some moves without winning
-        game.simulateMove(0, 0); // X in top-left
-        game.togglePlayer();     // Switch to O
-        game.simulateMove(1, 1); // O in middle
-        game.togglePlayer();     // Switch back to X
+        game.simulateMove(0, 0); // X in top-left  
+        game.currentPlayer = 'O';   // Switch to O
+        game.simulateMove(1, 1); // O in middle   
+        game.currentPlayer = 'X';  // Switch back to X
         game.simulateMove(2, 2); // X in bottom-right
         
         // Verify game is not won
@@ -88,21 +91,13 @@ public class TC03Test {
         // X | O | O
         // O | X | X
         game.simulateMove(0, 0); // X
-        game.togglePlayer();
         game.simulateMove(0, 1); // O
-        game.togglePlayer();
         game.simulateMove(0, 2); // X
-        game.togglePlayer();
         game.simulateMove(1, 0); // O
-        game.togglePlayer();
         game.simulateMove(1, 1); // X
-        game.togglePlayer();
         game.simulateMove(1, 2); // O
-        game.togglePlayer();
         game.simulateMove(2, 0); // X
-        game.togglePlayer();
         game.simulateMove(2, 1); // O
-        game.togglePlayer();
         game.simulateMove(2, 2); // X
         
         // Verify all buttons are filled
@@ -131,7 +126,6 @@ public class TC03Test {
     public void testMultipleResets() {
         // Make some moves
         game.simulateMove(0, 0);
-        game.togglePlayer();
         game.simulateMove(1, 1);
         
         // First reset
@@ -146,7 +140,6 @@ public class TC03Test {
         
         // Make different moves
         game.simulateMove(2, 2);
-        game.togglePlayer();
         game.simulateMove(0, 2);
         
         // Second reset
