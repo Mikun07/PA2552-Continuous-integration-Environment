@@ -18,7 +18,7 @@ public class TC03Test {
         // Initialize game with player 'X'
         game = new TicTacToe('X');
         // Enable test mode to prevent automatic player switching
-        game.testMode = true;
+        game.testMode = false;
     }
     
     @Test

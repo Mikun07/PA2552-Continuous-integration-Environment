@@ -7,7 +7,7 @@ public class TC02Test {
     void testHorizontalWin() {
         TicTacToe.headlessMode = true; // Ensure headless mode is enabled
         TicTacToe game = new TicTacToe('X');
-        game.testMode = true;
+        game.testMode = false;
 
         game.buttons[0][0].setText("X");
         game.buttons[0][1].setText("X");
@@ -20,7 +20,7 @@ public class TC02Test {
     void testVerticalWin() {
         TicTacToe.headlessMode = true;
         TicTacToe game = new TicTacToe('X');
-        game.testMode = true;
+        game.testMode = false;
 
         game.buttons[0][0].setText("X");
         game.buttons[1][0].setText("X");
@@ -33,7 +33,7 @@ public class TC02Test {
     void testDiagonalWin() {
         TicTacToe.headlessMode = true;
         TicTacToe game = new TicTacToe('X');
-        game.testMode = true;
+        game.testMode = false;
 
         game.buttons[0][0].setText("X");
         game.buttons[1][1].setText("X");
