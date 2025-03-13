@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TC06Test" time="0.033" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TC06Test" time="0.01" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
     <property name="java.class.path" value="C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\test-classes;C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\classes;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\ayomi\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -16,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire2900936000834407513\surefirebooter-20250313140445045_3.jar C:\Users\ayomi\AppData\Local\Temp\surefire2900936000834407513 2025-03-13T14-04-44_812-jvmRun1 surefire-20250313140445045_1tmp surefire_0-20250313140445045_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ayomi\AppData\Local\Temp\surefire9046549807771097694\surefirebooter6525979095208575986.jar C:\Users\ayomi\AppData\Local\Temp\surefire9046549807771097694 2025-03-13T14-09-09_485-jvmRun1 surefire615535485427412999tmp surefire_015390598689255639086tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\test-classes;C:\Users\ayomi\OneDrive\Documents\GitHub\PA2552-Continuous-integration-Environment\TicTacToe\target\classes;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\ayomi\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ayomi\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\ayomi\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire2900936000834407513\surefirebooter-20250313140445045_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ayomi\AppData\Local\Temp\surefire9046549807771097694\surefirebooter6525979095208575986.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -60,24 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC06Test" time="0.017">
-    <system-out><![CDATA[Running in headless mode (CI/CD). UI will not be created.
-Starting test: testPlayerAlternatesAfterEachMove
-]]></system-out>
-  </testcase>
-  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC06Test" time="0.005">
-    <system-out><![CDATA[Running in headless mode (CI/CD). UI will not be created.
-Starting test: testTurnDoesNotChangeIfMoveIsInvalid
-]]></system-out>
-  </testcase>
-  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC06Test" time="0.005">
-    <system-out><![CDATA[Running in headless mode (CI/CD). UI will not be created.
-Starting test: testTurnDoesNotChangeAfterWin
-Win detected in row 0
-Player X wins!
-Win detected in row 0
-Win detected in row 0
-Player X wins!
-]]></system-out>
-  </testcase>
+  <testcase name="testPlayerAlternatesAfterEachMove" classname="TC06Test" time="0.002"/>
+  <testcase name="testTurnDoesNotChangeIfMoveIsInvalid" classname="TC06Test" time="0.003"/>
+  <testcase name="testTurnDoesNotChangeAfterWin" classname="TC06Test" time="0.003"/>
 </testsuite>
