@@ -3,11 +3,9 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      # - '**'
       - HV/To-do-list
   pull_request:
     branches:
-      # - main
       - HV/To-do-list
 
 jobs:
@@ -15,36 +13,21 @@ jobs:
     runs-on: ubuntu-latest  # Use the latest stable Ubuntu runner
 
     steps:
-      - name: Checkout codes
+      - name: Checkout code
         uses: actions/checkout@v3  # Fetch the repository code
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Use the Eclipse Temurin JDK distribution
-          java-version: '21'  # Set the Java version to 21
-          cache: maven  # Cache Maven dependencies to speed up builds
+          distribution: 'temurin'
+          java-version: '21'
+          cache: maven  # Cache Maven dependencies
 
-      # First run non-UI tests in headless mode (faster and more reliable)
-      - name: Run non-GUI tests in headless mode
-        working-directory: TicTacToe
-        run: mvn test -Djava.awt.headless=true AddTaskTest.java  # Run non-GUI tests
+      - name: Run unit tests (headless mode)
+        working-directory: TicTacToe  # Ensure this is the correct path
+        run: mvn test -Djava.awt.headless=true
 
-      # # Then set up and run GUI tests with Xvfb
-      # - name: Install Xvfb for GUI testing
-      #   run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
-
-      # - name: Start Xvfb
-      #   run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
-
-      # - name: Run GUI tests with Xvfb
-      #   working-directory: TicTacToe
-      #   env:
-      #     DISPLAY: :99  # Set the display to use the Xvfb virtual screen
-      #   run: mvn test -Dtest=TC08Test  # Run only GUI-related tests
-
-      # Build the project if on main branch
-      - name: Build project
+      - name: Build project (only on main branch)
         if: github.ref == 'refs/heads/main'
         working-directory: TicTacToe
         run: mvn -B package
