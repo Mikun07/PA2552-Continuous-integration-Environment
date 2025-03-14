@@ -13,7 +13,7 @@ class ToDoListTest {
 
     @Test
     void testAddTask() {
-        // Arrange
+        // Arrange new task
         Task newTask = new Task("Buy groceries");
 
         // Act
