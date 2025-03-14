@@ -3,10 +3,12 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - '**'
+      # - '**'
+      - HV/To-do-list
   pull_request:
     branches:
-      - main
+      # - main
+      - HV/To-do-list
 
 jobs:
   build:
