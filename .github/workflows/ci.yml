@@ -30,12 +30,12 @@ jobs:
         working-directory: TicTacToe
         run: mvn test -Djava.awt.headless=true AddTaskTest.java  # Run non-GUI tests
 
-      # Then set up and run GUI tests with Xvfb
-      - name: Install Xvfb for GUI testing
-        run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
+      # # Then set up and run GUI tests with Xvfb
+      # - name: Install Xvfb for GUI testing
+      #   run: sudo apt-get install -y xvfb  # Install Xvfb to enable virtual display for GUI tests
 
-      - name: Start Xvfb
-        run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
+      # - name: Start Xvfb
+      #   run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  # Start Xvfb in the background
 
       # - name: Run GUI tests with Xvfb
       #   working-directory: TicTacToe
