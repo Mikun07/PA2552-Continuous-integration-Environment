@@ -3,7 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
-class ToDoListTest {
+class RemoveTaskTest{
     private ArrayList<Task> tasks;
 
     @BeforeEach
